@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition, } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -11,9 +13,12 @@ import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition
 export class LoginPageComponent {
   loginForm!: FormGroup;
   isSubmitted = false;
+  // to return the user to the url that he was before login
+  returnUrl = '';
 
   // using form builder to create form in angular 
-  constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar) {
+  constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar,
+    private userService: UserService, private activatiedRoutes: ActivatedRoute, private router: Router) {
 
   }
 
@@ -23,6 +28,11 @@ export class LoginPageComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
+
+
+    // using snapshot we get the last url and queryParms is like the prams after url  Ex : // ?returnUrl=/checkout
+    this.returnUrl = this.activatiedRoutes.snapshot.queryParams.returnUrl;
+
   }
 
   // to access the formbuilder's controls like email we have to use loginForm.controls.email 
@@ -36,7 +46,9 @@ export class LoginPageComponent {
 
     if (this.loginForm.invalid) return;
 
-    this.showAlert("Email : " + this.fc.email.value + " Password : " + this.fc.password.value);
+    this.userService.login({ email: this.fc.email.value, password: this.fc.password.value }).subscribe(() => {
+      this.router.navigateByUrl(this.returnUrl);
+    })
 
   }
 
