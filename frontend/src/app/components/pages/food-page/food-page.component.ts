@@ -16,8 +16,13 @@ export class FoodPageComponent {
   constructor(activateRoute: ActivatedRoute, foodService: FoodService, private cartService: CartService, private router: Router) {
 
     activateRoute.params.subscribe((params) => {
-      if (params.id)
-        this.food = foodService.getFoodById(params.id);
+      // Here first we need to subscribe to the observable serverFood then set the local food variable with it
+      if (params.id) {
+        foodService.getFoodById(params.id).subscribe(serverFood => {
+          this.food = serverFood;
+        });
+      }
+
     })
 
   }

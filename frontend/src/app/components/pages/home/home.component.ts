@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Food } from 'src/app/public/models/Food';
 import { FoodService } from 'src/app/services/food.service';
 
@@ -15,6 +16,9 @@ export class HomeComponent implements OnInit {
   // we need to inject activatedReout to access the routing info
   constructor(private foodService: FoodService, activatedRoute: ActivatedRoute) {
 
+    // this is use to convert the Foods array to observable to be used by httpClient
+    let foodsObservable: Observable<Food[]>;
+
     // any time a parameter is changing this function will be called 
     activatedRoute.params.subscribe((params) => {
 
@@ -22,11 +26,16 @@ export class HomeComponent implements OnInit {
       //if you do not want to change the config.json you must use it like this 
       //if (params.['searchTerm']) {
       if (params.searchTerm)
-        this.foods = this.foodService.getAllFoodsBySearchTerm(params.searchTerm);
+        foodsObservable = this.foodService.getAllFoodsBySearchTerm(params.searchTerm);
       else if (params.tag)
-        this.foods = this.foodService.getAllFoodsByTag(params.tag);
+        foodsObservable = this.foodService.getAllFoodsByTag(params.tag);
       else
-        this.foods = foodService.getAll();
+        foodsObservable = foodService.getAll();
+
+      // now is time to subscribe to the observable variable to set it to local variable every time it changes 
+      foodsObservable.subscribe((serverFoods) => {
+        this.foods = serverFoods;
+      })
 
     })
 
