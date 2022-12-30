@@ -1,0 +1,7 @@
+<div>
+    <!-- #s here will tell angular to keep all the values related to this field and 
+        latter on you can see we used it to access the value of this field using s.value -->
+
+    <input #s type="text" placeholder="Search Food !" (keyup.enter)="search(s.value)" [value]="searchTerm" />
+    <button (click)="search(s.value)"> Search </button>
+</div>

@@ -1,0 +1,50 @@
+<!-- here we are using the title component that we created and every time we need a title in any page we can simply use this partial component-->
+<app-title title="Cart Page " margin="1.5rem 0 0 2.5rem"></app-title>
+<app-not-found [visible]="!cart || !cart.items.length" notFoundMessage="Cart Page Is Empty"
+    resetLinkeText="Go To Homepage">
+
+</app-not-found>
+<div *ngIf=" cart && cart.items.length" class="container">
+    <ul>
+        <li *ngFor="let cartItem of cart.items">
+            <div>
+                <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name">
+            </div>
+            <div>
+                <a routerLink="/food/{{cartItem.food.id}}">
+                    {{cartItem.food.name}}
+                </a>
+            </div>
+
+            <div>
+                <mat-icon class="icon" aria-hidden="false" aria-label="add" fontIcon="add"
+                    (click)="changeQuantity(cartItem , quantitySelect.value , 'add')"></mat-icon>
+
+                <select #quantitySelect [value]="cartItem.quantity"
+                    (change)="changeQuantity(cartItem , quantitySelect.value , 'select')">
+                    <option *ngFor="let _ of createSelectList() let item = index;"
+                        [selected]="(item)==cartItem.quantity?'selected':''">
+                        {{item}} </option>
+                </select>
+                <mat-icon class="icon" aria-hidden="false" aria-label="remove" fontIcon="remove"
+                    (click)="changeQuantity(cartItem , quantitySelect.value , 'remove')"></mat-icon>
+            </div>
+
+            <div>
+                {{cartItem.price | currency}}
+            </div>
+            <div>
+                <button class=" remove-button" (click)="removeFromCart(cartItem)"> Remove </button>
+            </div>
+        </li>
+    </ul>
+    <div class="checkout">
+        <div>
+            <div class="foods-count"><span>Count : </span> {{cart.totalCount}}</div>
+            <div class="total-price"><span>Price : </span> {{cart.totalPrice|currency}}</div>
+        </div>
+        <a routerLink="/checkout">Proceed to Checkout</a>
+
+    </div>
+
+</div>
