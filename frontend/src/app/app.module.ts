@@ -14,10 +14,11 @@ import { CartPageComponent } from './components/pages/cart-page/cart-page.compon
 import { TitleComponent } from './components/partials/title/title.component';
 import { MatIconModule } from '@angular/material/icon';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
-import { FormsModule } from "@angular/forms";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FoodPageComponent,
     CartPageComponent,
     TitleComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -38,10 +40,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     RatingModule,
     MatIconModule,
     HttpClientModule,
-    FormsModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
