@@ -79,11 +79,11 @@ router.post('/register', asyncHandler(
     }
 
 ))
-
+// user.id added here for middleware
 const generateTokenResponse = (user: any) => {
     const token = jwt.sign({
-        email: user.email, isAdmin: user.isAdmin
-    }, "PrivateKeyHere", {
+        id: user.id, email: user.email, isAdmin: user.isAdmin
+    }, process.env.JWT_SECRET!, {
         expiresIn: "30d"
     });
 
