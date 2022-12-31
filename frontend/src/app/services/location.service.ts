@@ -11,8 +11,10 @@ export class LocationService {
 
   getCurrentLocation(): Observable<LatLngLiteral> {
     return new Observable((observer) => {
-      if (!navigator.geolocation) return;
 
+      // checking if navigator option is on or is available for the browser if not just return and do nothing
+      if (!navigator.geolocation) return;
+      // navigator is an javascript object and using it you get the current latitude and longitude of the user 
       return navigator.geolocation.getCurrentPosition(
         (pos) => {
           observer.next({

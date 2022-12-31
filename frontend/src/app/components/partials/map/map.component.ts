@@ -10,6 +10,7 @@ import { LocationService } from 'src/app/services/location.service';
 })
 export class MapComponent {
 
+  // to get the order object from checkout page
   @Input()
   order!: Order;
   @Input()
@@ -24,10 +25,11 @@ export class MapComponent {
   private readonly DEFAULT_LATLNG: LatLngTuple = [13.75, 21.62];
 
 
-
+  // it selects a tag in this case map and put it inside the field static : true is to be able to access it inside ngOnInit
   @ViewChild('map', { static: true })
-  mapFef!: ElementRef;
+  mapRef!: ElementRef;
 
+  // part of leaflet 
   map!: Map;
   currentMarker!: Marker;
 
@@ -60,10 +62,12 @@ export class MapComponent {
   initializeMap() {
     if (this.map) return;
 
-    this.map = map(this.mapFef.nativeElement, {
+    // initializing map with reference from leaflet
+    this.map = map(this.mapRef.nativeElement, {
       attributionControl: false
     }).setView(this.DEFAULT_LATLNG, 1);
 
+    // this is a free map service google and others are not totally free or require Credit Card 
     tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(this.map);
 
     this.map.on('click', (e: LeafletMouseEvent) => {
@@ -80,6 +84,7 @@ export class MapComponent {
     })
   }
 
+  // setting the position of Pointer or marker
   setMarker(latlng: LatLngExpression) {
     this.addressLatLng = latlng as LatLng;
     if (this.currentMarker) {
@@ -87,17 +92,18 @@ export class MapComponent {
       return;
     }
 
+    // set the icon for the marker and make it draggable 
     this.currentMarker = marker(latlng, {
       draggable: true,
       icon: this.MARKER_ICON
     }).addTo(this.map);
 
-
+    //  when drag event ends we set the current position again
     this.currentMarker.on('dragend', () => {
       this.addressLatLng = this.currentMarker.getLatLng();
     })
   }
-
+  // this is specially for the backend in mongodb , mongodb only accepts float with maximum length of 8 and here we are fixing the values suitable for it
   set addressLatLng(latlng: LatLng) {
     if (!latlng.lat.toFixed) return;
 
