@@ -27,6 +27,9 @@ export class UserService {
     this.userObservable = this.userSubject.asObservable();
   }
 
+  public get currentUser(): User {
+    return this.userSubject.value;
+  }
 
   // here we are using an Interface instead of user object the reason is that we don't want anyone create an instance of it
 

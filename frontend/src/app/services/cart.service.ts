@@ -60,6 +60,12 @@ export class CartService {
     return this.cartSubject.asObservable();
   }
 
+  // to send a latest version of cart object to the checkout components
+  getCart(): Cart {
+
+    return this.cartSubject.value;
+  }
+
   private setCartToLocalStorage(): void {
 
     // reduce function here uses callback functions to go throw all the items and selects the specified item property and work with its value 

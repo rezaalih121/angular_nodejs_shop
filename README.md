@@ -137,3 +137,31 @@
         Add Register service method
         Add Register link
         Add Register Component
+
+    13. Loading!
+
+        Add Image
+        Add Component
+        Add Service
+        Add Interceptor
+
+    14. Checkout Page
+
+        Create Order Model
+        Create Checkout Page Component
+            Add To Router
+        Add User to User Service
+        Add Cart to Cart Service
+        Create Order Items List Component
+        Adding Map To The Checkout Page
+            Add Leaflet npm package
+                Add @types/leaflet
+                Add Css to angular.json
+            Add AddressLatLng to Order Model
+            Create Map component
+                Add to checkout page
+                Add TS
+                    Change app-map selector to map
+            Add Html
+            Add CSS
+        Add Auth Guard
