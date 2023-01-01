@@ -26,6 +26,7 @@ app.use(cors({
 
 app.use("/api/foods", foodRouter);
 app.use("/api/users", userRouter);
+app.use("/api/orders", orderRouter);
 
 
 const PORT = 5000;

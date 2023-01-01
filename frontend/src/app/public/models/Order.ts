@@ -9,7 +9,7 @@ export class Order {
     address!: string;
     addressLatLng!: LatLng;
     paymentId!: string;
-    careatedAt!: string;
+    createdAt!: string;
     status!: string;
 
 }

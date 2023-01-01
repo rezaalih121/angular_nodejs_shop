@@ -8,7 +8,7 @@ import { LocationService } from 'src/app/services/location.service';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent {
+export class MapComponent implements OnChanges {
 
   // to get the order object from checkout page
   @Input()
@@ -35,6 +35,7 @@ export class MapComponent {
 
   constructor(private locationService: LocationService) { }
 
+  // here we can not use ngOnInit because it will be triggered before the new order coming from the server
   ngOnChanges(): void {
     if (!this.order) return;
     this.initializeMap();
@@ -43,6 +44,8 @@ export class MapComponent {
       this.showLocationOnReadonlyMode();
     }
   }
+
+
   showLocationOnReadonlyMode() {
     const m = this.map;
     this.setMarker(this.addressLatLng);
