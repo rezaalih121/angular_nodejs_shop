@@ -1,34 +1,52 @@
-div {
+footer {
     display: flex;
     justify-content: center;
-    color: white;
-    position: relative;
 
-    p {
-        padding-bottom: 0px;
-    }
-
-    a {
-        padding: 1rem;
+    div {
+        display: flex;
+        justify-content: center;
         color: white;
+        position: relative;
+        flex-direction: column;
+        margin-bottom: -21%;
+
+        div {
+            display: flex;
+            flex-direction: column;
+
+            p {
+                padding-bottom: 0px;
+            }
+
+            div {
+                display: flex;
+                flex-direction: row;
 
 
 
 
-    }
+                a {
+                    padding: 1rem;
+                    color: white;
 
-    a:hover {
-        color: red;
-        cursor: pointer;
-        transition: all 0.7s ease-in-out;
+                }
 
-        svg {
-            width: 21px;
-            height: 21px;
-            transition: all 0.7s ease-out;
+                a:hover {
+                    color: red;
+                    cursor: pointer;
+                    transition: all 0.7s ease-in-out;
+
+                    svg {
+                        width: 21px;
+                        height: 21px;
+                        transition: all 0.7s ease-out;
+                    }
+
+                }
+            }
         }
 
+
+
     }
-
-
 }

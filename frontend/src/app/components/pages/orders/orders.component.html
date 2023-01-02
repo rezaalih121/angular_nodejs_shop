@@ -3,27 +3,27 @@
 
     <div class="content">
 
-    
-    <table>
 
-        <tr>
-            <td></td>
-            <td>Order Date</td>
-            <td>Order Id - Click to Track Order </td>
-            
-        </tr>
-        <tr *ngFor="let order of orders; let i = index">
-            <td>{{ (i+1)}}</td>
-            <td>{{order.createdAt}}</td>
-            <td>
-                <a routerLink="/track/{{order.id}}" alt="Track Order">
-                    <span>{{order.id}}</span> 
-                </a>
-            </td>
-        
-        </tr>
+        <table>
 
-    </table>
-</div>
+            <tr>
+                <td></td>
+                <td>Order Date</td>
+                <td>Order Id - Click to Track Order </td>
+
+            </tr>
+            <tr *ngFor="let order of orders; let i = index">
+                <td>{{ (i+1)}}</td>
+                <td>{{order.createdAt}}</td>
+                <td>
+                    <a routerLink="/track/{{order.id}}" alt="Track Order">
+                        <span>{{order.id}}</span>
+                    </a>
+                </td>
+
+            </tr>
+
+        </table>
+    </div>
 
 </div>

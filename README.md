@@ -1,3 +1,9 @@
+My first fullstack E-commerce project using 
+    Frontend : Angular 
+    Backend : Node.js + MongoDB
+
+All the steps I have done for each functionality 
+
 1. Creating a online shop to learn angular and node.js
     1. Generating Component 
     2. Add Html
@@ -83,126 +89,129 @@
 
 9. Login Page
 
-    Generate Component
-        Add to routes
-        Add ts
-        Add html
+    1.Generate Component
+        1.Add to routes
+        2.Add ts
+        3.Add html
             Import Reactive Forms Module
-        Add Css
+        4.Add Css
         
-        Add Login Api
-            Use json
-            Add jsonwebtoken
-            Test Using Postman
+        5.Add Login Api
+            1. Use json
+            2.Add jsonwebtoken
+            3.Test Using Postman
        
-        Generate User Service
-            Generate User model
-            Add User Subject
-        Add Login Method
-            Add User Urls
-            Generate IUserLogin interface
-            Add ngx-toastr
-                Import Module
-                Import BrowserAnimationsModule
-                Add styles in angular.json
-            Add to Header
-    Add Local Storage methods
-    Add Logout Method
-        Add to Header
+        6.Generate User Service
+            1.Generate User model
+            2.Add User Subject
+        7.Add Login Method
+            1.Add User Urls
+            2.Generate IUserLogin interface
+            3.Add ngx-toastr
+                1.Import Module
+                2.Import BrowserAnimationsModule
+                3.Add styles in angular.json
+            4.Add to Header
+        8.Add Local Storage methods
+        9.Add Logout Method
+            1.Add to Header
     
     10. Make Components For Login Page
 
-        Input Container
-        Input Validation
-        Text Input
-        Default Button
+        1.Input Container
+        2.Input Validation
+        3.Text Input
+        4.Default Button
     
     11. Connect Login API To MongoDB Atlas
 
-        Moving Apis into routers
-        Create MongoDB Atlas
-        Create .env file
-        Install
+        1.Moving Apis into routers
+        2.Create MongoDB Atlas
+        3.Create .env file
+        4.Install
           
-            mongoose : to creating our models to be sends  to database
-            dotenv : 
-            bcryptjs : to encrypting passwords inside database
-            express-async-handler : to make express consistent 
-        Connect to MongoDB Atlas
-        Use MongoDB instead of data.ts in apis
+            1.mongoose : to creating our models to be sends  to database
+            2.dotenv : 
+            3.bcryptjs : to encrypting passwords inside database
+            4.express-async-handler : to make express consistent 
+        5.Connect to MongoDB Atlas
+        6.Use MongoDB instead of data.ts in apis
 
     12. Register User
 
-        Add Register api
-        Add Register service method
-        Add Register link
-        Add Register Component
+        1.Add Register api
+        2.Add Register service method
+        3.Add Register link
+        4.Add Register Component
 
     13. Loading!
 
-        Add Image
-        Add Component
-        Add Service
-        Add Interceptor
+        1.Add Image
+        2.Add Component
+        3.Add Service
+        4.Add Interceptor
 
     14. Checkout Page
 
-        Create Order Model
-        Create Checkout Page Component
-            Add To Router
-        Add User to User Service
-        Add Cart to Cart Service
-        Create Order Items List Component
-        Adding Map To The Checkout Page
-            Add Leaflet npm package
-                Add @types/leaflet
-                Add Css to angular.json
-            Add AddressLatLng to Order Model
-            Create Map component
-                Add to checkout page
-                Add TS
+        1.Create Order Model
+        2.Create Checkout Page Component
+            1.Add To Router
+        3.Add User to User Service
+        4.Add Cart to Cart Service
+        5.Create Order Items List Component
+        6.Adding Map To The Checkout Page
+            1.Add Leaflet npm package
+                1.Add @types/leaflet
+                2.Add Css to angular.json
+            2.Add AddressLatLng to Order Model
+            3.Create Map component
+                1.Add to checkout page
+                2.Add TS
                     Change app-map selector to map
-            Add Html
-            Add CSS
-        Add Auth Guard
+            4.Add Html
+            5.Add CSS
+        6.Add Auth Guard
 
     15. Payment Page
 
-        Generate Component
-        Add 'getOrderForCurrentUser' api
-        Add Order Service method
-        Connect Component to Service
-        Make the map component readonly
+        1.Generate Component
+        2.Add 'getOrderForCurrentUser' api
+        3.Add Order Service method
+        4.Connect Component to Service
+        5.Make the map component readonly
 
     16. Adding Paypal
 
-        Generate Component
-        Add to payment page
-        Get Paypal client Id
-        Add Paypal JS to index.html
-        Set up Paypal button
-        Add Pay api to order router
-        Get Paypal sandbox account
+        1.Generate Component
+        2.Add to payment page
+        3.Get Paypal client Id
+        4.Add Paypal JS to index.html
+        5.Set up Paypal button
+        6.Add Pay api to order router
+        7.Get Paypal sandbox account
 
     17. Order Track Page
 
-        Generate Component
+        1.Generate Component
             Add to routes
-        Add API
+        2.Add API
             Add to urls.ts
-        Add method to order.service
-        Add HTML
-        Add CSS
+        3.Add method to order.service
+        4.Add HTML
+        5.Add CSS
     
     18. Deploy On Heroku
 
-        OutputPath in angular.json
-        package.json
+        1.OutputPath in angular.json
+        2.package.json
             frontend
             backend
             root
-        BASE_URL in urls.ts
-        Public folder config in server.ts
-        Run commands
-        Add built folder to .gitignore
-        Commit and Push
+        3.BASE_URL in urls.ts
+        4.Public folder config in server.ts
+        5.Run commands
+        6.Add built folder to .gitignore
+        7.Commit and Push
+
+
+Final Product : http://rai-foodshop.onrender.com 
