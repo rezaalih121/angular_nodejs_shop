@@ -4,6 +4,7 @@
     align-items: flex-start;
     margin: 1.5rem;
     margin-top: 0.5rem;
+    color: white;
 
     ul {
         display: flex;
@@ -66,11 +67,37 @@
     li .remove-button:hover {
         opacity: 1;
         cursor: pointer;
+        transition: all 0.7s ease-in-out;
     }
 
     .icon {
         margin-right: 7px;
         margin-left: 7px;
+        cursor: pointer;
+
+    }
+
+    .icon:hover {
+        color: #e72929;
+        transition: all 0.7s ease-in-out;
+    }
+
+    a {
+        padding: 0.5rem;
+        color: white;
+        background: #e72929;
+        display: block;
+        width: 99%;
+        border-radius: 1rem;
+        text-align: center;
+        opacity: 0.7;
+        justify-self: center;
+    }
+
+    a:hover {
+        opacity: 1;
+        cursor: pointer;
+        transition: all 0.7s ease-in-out;
     }
 }
 
@@ -114,22 +141,7 @@
 
 
 
-    a {
-        padding: 1rem;
-        color: white;
-        background: #e72929;
-        display: block;
-        width: 99%;
-        border-radius: 1rem;
-        text-align: center;
-        opacity: 0.7;
-        justify-self: center;
-    }
 
-    a:hover {
-        opacity: 1;
-        cursor: pointer;
-    }
 
 
 }

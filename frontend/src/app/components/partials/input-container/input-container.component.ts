@@ -13,6 +13,8 @@ export class InputContainerComponent {
   label!: string;
   @Input()
   bgColor!: 'white';
+  @Input()
+  textColor!: 'white';
 
 
 

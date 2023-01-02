@@ -193,4 +193,16 @@
         Add method to order.service
         Add HTML
         Add CSS
+    
+    18. Deploy On Heroku
 
+        OutputPath in angular.json
+        package.json
+            frontend
+            backend
+            root
+        BASE_URL in urls.ts
+        Public folder config in server.ts
+        Run commands
+        Add built folder to .gitignore
+        Commit and Push

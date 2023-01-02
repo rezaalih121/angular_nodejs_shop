@@ -1,0 +1,51 @@
+.container {
+    margin-top: 1rem;
+    display: flex;
+    margin: 0 2rem 6rem 2rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: whitesmoke;
+    align-items: center;
+
+    .content {
+        width: 35rem;
+        margin-right: 3rem;
+
+        a {
+            padding: 0.5rem;
+            color: white;
+            background: #e72929;
+            display: block;
+            width: 99%;
+            border-radius: 1rem;
+            text-align: center;
+            opacity: 0.7;
+            justify-self: center;
+
+        }
+
+        a:hover {
+
+            opacity: 1;
+            cursor: pointer;
+            transition: all 0.7s ease-in-out;
+
+
+        }
+
+        table {
+            border: 1px;
+            padding: 5px;
+
+
+            td {
+                border: 1px;
+                border-color: white;
+                padding: 5px;
+
+            }
+        }
+    }
+
+}

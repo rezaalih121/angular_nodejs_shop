@@ -7,6 +7,7 @@ import { FoodPageComponent } from './components/pages/food-page/food-page.compon
 import { HomeComponent } from './components/pages/home/home.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+import { OrdersComponent } from './components/pages/orders/orders.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 
@@ -25,7 +26,8 @@ const routes: Routes = [
   // added a guard authentication here on checkout page route this rout is activated if AuthGuard function returns true
   { path: 'checkout', component: CheckoutPageComponent, canActivate: [AuthGuard] },
   { path: 'payment', component: PaymentPageComponent, canActivate: [AuthGuard] },
-  { path: 'track/:orderId', component: OrderTrackPageComponent, canActivate: [AuthGuard] }
+  { path: 'track/:orderId', component: OrderTrackPageComponent, canActivate: [AuthGuard] },
+  { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
