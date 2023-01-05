@@ -1,27 +1,25 @@
 <header>
-    <div class="container">
-         <a routerLink="/" class="logo">RAI Food Shop</a>
-        <nav>
-           
+  <div class="container">
+    <nav>
+      <a routerLink="/" class="logo">RAI Food Shop</a>
 
-            <ul>
-                <li *ngIf="!isAuth()">
-                    <a routerLink="login">Login</a>
-                </li>
-                <li *ngIf="isAuth()" class="menu-container">
-                    <a routerLink="/dashboard">{{user.name}}</a>
-                    <div class="menu">
-                        <a routerLink="/orders">Orders</a>
-                        <a (click)="logOut()">Logout</a>
-                    </div>
-                </li>
-                <li>
-                    <a routerLink="/cart-page">
-                        Cart <span *ngIf="cartQuantity">{{cartQuantity}}</span>
-                    </a>
-                </li>
-            </ul>
-
-        </nav>
-    </div>
+      <ul>
+        <li *ngIf="!isAuth()">
+          <a routerLink="login">Login</a>
+        </li>
+        <li *ngIf="isAuth()" class="menu-container">
+          <a routerLink="/dashboard">{{ user.name }}</a>
+          <div class="menu">
+            <a routerLink="/orders">Orders</a>
+            <a (click)="logOut()">Logout</a>
+          </div>
+        </li>
+        <li>
+          <a routerLink="/cart-page">
+            Cart <span *ngIf="cartQuantity">{{ cartQuantity }}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
