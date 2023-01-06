@@ -1,31 +1,31 @@
 .container {
-    margin-top: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: whitesmoke;
+
+  .content {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    color: whitesmoke;
+    flex-direction: column;
+    width: 100%;
+    max-width: 35rem;
+    margin-right: 1rem;
+    background-color: rgb(7, 7, 7, 0.7);
+    padding: 10px;
+    border-radius: 5%;
+    div {
+      margin-bottom: 1rem;
 
-    .content {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 35rem;
-        margin-right: 1rem;
+      div {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+      }
 
-        div {
-            margin-bottom: 1rem;
-
-            div {
-                margin-top: 1rem;
-                font-size: 1.1rem;
-            }
-
-            strong {
-                display: inline-block;
-                width: 20%;
-            }
-        }
-
+      strong {
+        display: inline-block;
+        width: 20%;
+      }
     }
-
+  }
 }

@@ -1,65 +1,58 @@
 .container {
-    margin-top: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  margin: 0 2rem 6rem 2rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: whitesmoke;
+  align-items: center;
+
+  .content {
     display: flex;
-    margin: 0 2rem 6rem 2rem;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    color: whitesmoke;
-    align-items: center;
-
-    .content {
-        display: flex;
-        flex-direction: column;
-        width: 70%;
-        border: 1px solid #eeeeee;
-        border-radius: 5px;
-
-        table {
-            width: 100%;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-
-            tr {
-                width: 100%;
-
-            }
-        }
-
-        a {
-            padding: 0.5rem;
-            color: white;
-            background: #e72929;
-            display: block;
-            width: 99%;
-            border-radius: 1rem;
-            text-align: center;
-            opacity: 0.7;
-            justify-self: center;
-
-        }
-
-        a:hover {
-
-            opacity: 1;
-            cursor: pointer;
-            transition: all 0.7s ease-in-out;
-
-
-        }
-
-        table {
-            border: 1px;
-            padding: 5px;
-
-
-            td {
-                border: 1px;
-                border-color: white;
-                padding: 5px;
-
-            }
-        }
+    width: 100%;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    background-color: rgb(7, 7, 7, 0.7);
+    padding: 10px;
+    border-radius: 7%;
+    table {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      overflow: auto;
     }
 
+    a {
+      padding: 0.5rem;
+      color: white;
+      background: #e72929;
+      display: block;
+      width: 99%;
+      border-radius: 1rem;
+      text-align: center;
+      opacity: 0.7;
+      justify-self: center;
+    }
+
+    a:hover {
+      opacity: 1;
+      cursor: pointer;
+      transition: all 0.7s ease-in-out;
+    }
+
+    table {
+      border: 1px;
+      padding: 5px;
+
+      td {
+        border: 1px;
+        border-color: white;
+        padding: 5px;
+      }
+    }
+  }
 }
