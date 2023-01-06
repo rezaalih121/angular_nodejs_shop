@@ -6,9 +6,16 @@ header {
   .container {
     position: relative;
     margin: 0 auto;
+<<<<<<< HEAD
     display: flex;
     justify-content: space-between;
     nav {
+=======
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+>>>>>>> 1031d6a28ee558f4c6f5c4eab5adb37754075288
       position: fixed;
       top: 0;
       width: 100%;
