@@ -21,7 +21,8 @@ export class PaypalButtonComponent {
   @ViewChild('paypal', { static: true })
   paypalElement!: ElementRef;
 
-  constructor(private orderService: OrderService,
+  constructor(
+    private orderService: OrderService,
     private cartService: CartService,
     private router: Router,
     private toastrService: ToastrService) { }
